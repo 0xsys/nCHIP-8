@@ -1,3 +1,4 @@
 #include <stdio.h>
+#include "cpu.h"
 
-FILE* openROM(const char **argv);
+int loadROM(const char **argv, Components *chip8);
