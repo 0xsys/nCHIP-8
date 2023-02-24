@@ -18,8 +18,11 @@ int loadROM(const char **argv, Components *chip8) {
     fseek(rom, 0, SEEK_END);
     romSize = ftell(rom);
     fseek(rom, 0, SEEK_SET);
-
-    fread(chip8->memory +0x200, sizeof(int), romSize, rom);    
+    
+    // Check this fread function args are placed correctly.
+    if(!fread(chip8->memory + 0x200, sizeof(int), romSize, rom)) {
+        perror("Could not read ROM file");
+    }
 
     fclose(rom);
 

@@ -20,7 +20,39 @@
 // ----------------------------------
 
 #include "rom.h"
+#include <stdbool.h>
 
 int main(int argc, char **argv) {
-    openROM(argv[1]);
+
+    if(argc != 2) {
+        printf("Usage: ./nCHIP-8 PATH/TO/ROM");
+    }
+    
+    uint16_t opcode;
+    Components chip8;
+
+    // Initialise the chip8 components struct 
+    cpuInitialise(&chip8);
+
+    // Load fontset from cpu.h into memory
+    // Load ROM into memory of chip8
+    loadROM(argv, &chip8);
+
+    // Fetch, Decode, Execute ; including ncurses graphics and keyboard input, and sound emulation
+    for( int i = 0; i < 20; i++) {
+
+    opcode = fetchOpcode(&chip8);
+
+    printf("Opcode: %x\n", opcode);
+    }
+    //while(true) {
+
+
+
+
+
+
+
+    //}
+
 }
