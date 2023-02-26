@@ -1,6 +1,10 @@
 #include <inttypes.h>
 #include <stdlib.h>
 
+#ifndef _CPU_H_
+
+#define _CPU_H_
+
 typedef struct {
 
 uint8_t *memory;    // 4kB of memory (4096)
@@ -18,3 +22,5 @@ uint8_t sound;
 uint8_t *V;         // 16 8-bit general registers
 
 } Components;
+
+#endif 
