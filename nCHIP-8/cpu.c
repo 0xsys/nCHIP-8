@@ -13,6 +13,7 @@ int cpuInitialise(Components *chip8) {
 
     chip8->PC = 0x200;
 
+    chip8->display = calloc(64 * 32, sizeof(bool));
     
     const uint8_t fontset[0x09F] = {
     0xF0, 0x90, 0x90, 0x90, 0xF0, // 0

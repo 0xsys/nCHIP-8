@@ -1,5 +1,6 @@
 #include <inttypes.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #ifndef _CPU_H_
 
@@ -20,6 +21,8 @@ uint8_t delay;
 uint8_t sound;
 
 uint8_t *V;         // 16 8-bit general registers
+
+bool *display;
 
 } Components;
 
